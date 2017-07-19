@@ -1,0 +1,31 @@
+{
+  "author": {
+    "name": "linjw"
+  },
+  "bugs": {
+    "url": "https://github.com/mrlinjw/react-native-calendars/issues"
+  },
+  "description": "React Native Calendar Components",
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.0",
+    "jasmine": "^2.5.2",
+    "react": "16.0.0-alpha.6",
+    "react-native": "0.44.0"
+  },
+  "homepage": "https://github.com/mrlinjw/react-native-calendars#readme",
+  "license": "MIT",
+  "main": "src/index.js",
+  "name": "react-native-calendars",
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrlinjw/react-native-calendars.git"
+  },
+  "scripts": {
+    "lint": "eslint src/ example/src",
+    "test": "jasmine src/*.spec.js && npm run lint"
+  },
+  "version": "1.0.0"
+}
