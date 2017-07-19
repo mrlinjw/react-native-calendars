@@ -83,7 +83,7 @@ LocaleConfig.defaultLocale = 'fr';
   // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
   maxDate={'2012-05-30'}
   // Handler which gets executed on day press. Default = undefined
-  onDayPress={(day) => {console.log('selected day', day)}}
+  onDayPress={(day, dayMarked) => {console.log('selected day', day)}}
   // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
   monthFormat={'yyyy MM'}
   // Handler which gets executed when visible month changes in calendar. Default = undefined
@@ -111,8 +111,10 @@ LocaleConfig.defaultLocale = 'fr';
 ```javascript
 <Calendar
   // Collection of dates that have to be marked. Default = {}
+  // price 不为空时，再日历底部显示红色价格 如：¥12345，点击日期时整个dayMarked会传出来
   markedDates={{
     '2012-05-16': {selected: true, marked: true},
+    '2012-05-17': {price: 12345},
     '2012-05-17': {marked: true},
     '2012-05-18': {disabled: true}
   }}
@@ -219,7 +221,7 @@ An advanced agenda component that can display interactive listings for calendar 
   // callback that gets called when items for a certain month should be loaded (month became visible)
   loadItemsForMonth={(month) => {console.log('trigger items loading')}}
   // callback that gets called on day press
-  onDayPress={(day)=>{console.log('day pressed')}}
+  onDayPress={(day, dayMarked)=>{console.log('day pressed')}}
   // callback that gets called when day changes while scrolling agenda list
   onDayChange={(day)=>{console.log('day changed')}}
   // initially selected day
