@@ -6,6 +6,10 @@
     "url": "https://github.com/mrlinjw/react-native-calendars/issues"
   },
   "description": "React Native Calendar Components",
+    "dependencies": {
+    "prop-types": "^15.5.10",
+    "xdate": "^0.8.0"
+  },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^3.19.0",
