@@ -6,7 +6,7 @@ export default function styleConstructor(theme={}) {
   return StyleSheet.create({
     base: {
       width: 38,
-      height: 38,
+      height: appStyle.dayHeight || 38,
       alignItems: 'center'
     },
     text: {
@@ -22,7 +22,7 @@ export default function styleConstructor(theme={}) {
     },
     selected: {
       backgroundColor: appStyle.selectedDayBackgroundColor,
-      borderRadius: 4
+      borderRadius: 2
     },
     todayText: {
       color: appStyle.todayTextColor
@@ -42,9 +42,16 @@ export default function styleConstructor(theme={}) {
     },
     priceStyle: {
       flex: 1,
-      color: 'red',
+      color: '#f64203',
       fontSize: 10,
       backgroundColor: 'transparent',
+    },
+    remark:{
+      flex: 1,
+      color: '#646464',
+      fontSize: 10,
+      backgroundColor: 'transparent',
+      paddingBottom: 6,
     },
     visibleDot: {
       opacity: 1,

@@ -39,6 +39,7 @@ class Day extends Component {
     const textStyle = [this.style.text];
     const dotStyle = [this.style.dot];
     const priceStyle = [this.style.priceStyle];
+    const remarkStyle = [this.style.remark];
 
     let marked = this.props.marked || {};
     if (marked && marked.constructor === Array && marked.length) {
@@ -46,13 +47,17 @@ class Day extends Component {
         marked: true
       };
     }
-    let dot, price;
+    let dot, price, remark;
     if (marked.marked) {
       dotStyle.push(this.style.visibleDot);
       dot = (<View style={dotStyle}/>);
     }if(marked.price){
-      price = (<Text style={priceStyle}>{`¥${marked.price}`}</Text>)
-    }else if (!this.props.markingExists) {
+      price = (<Text numberOfLines = {1} style={priceStyle}>{`¥${marked.price}`}</Text>)
+    }
+    if(marked.remark){
+      remark = (<Text numberOfLines = {1} style={remarkStyle}>{`${marked.remark}`}</Text>)
+    }
+    if (!this.props.markingExists) {
       textStyle.push(this.style.alignedText);
     }
 
@@ -60,6 +65,8 @@ class Day extends Component {
       containerStyle.push(this.style.selected);
       dotStyle.push(this.style.selectedDot);
       textStyle.push(this.style.selectedText);
+      priceStyle.push(this.style.selectedText);
+      remarkStyle.push(this.style.selectedText);
     } else if (this.props.state === 'disabled' || marked.disabled) {
       textStyle.push(this.style.disabledText);
       priceStyle.push(this.style.disabledText);
@@ -69,8 +76,9 @@ class Day extends Component {
     return (
       <TouchableOpacity style={containerStyle} onPress={this.props.onPress}>
         <Text style={textStyle}>{String(this.props.children)}</Text>
-        {dot}
         {price}
+        {remark}
+        {dot}
       </TouchableOpacity>
     );
   }

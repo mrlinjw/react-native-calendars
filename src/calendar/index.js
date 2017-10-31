@@ -57,6 +57,10 @@ class Calendar extends Component {
     monthFormat: PropTypes.string
   };
 
+  static defaultProps = {
+    showHeader: true
+	}
+
   constructor(props) {
     super(props);
     this.style = styleConstructor(this.props.theme);
@@ -214,7 +218,7 @@ class Calendar extends Component {
     }
     return (
       <View style={[this.style.container, this.props.style]}>
-        <CalendarHeader
+       <CalendarHeader
           theme={this.props.theme}
           hideArrows={this.props.hideArrows}
           month={this.state.currentMonth}
@@ -223,6 +227,8 @@ class Calendar extends Component {
           firstDay={this.props.firstDay}
           renderArrow={this.props.renderArrow}
           monthFormat={this.props.monthFormat}
+          showHeader={this.props.showHeader}
+          weekStyle={this.props.weekStyle}
         />
         {weeks}
       </View>);
