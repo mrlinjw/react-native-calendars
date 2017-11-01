@@ -197,7 +197,7 @@ class Calendar extends Component {
     days.forEach((day, id2) => {
       week.push(this.renderDay(day, id2));
     }, this);
-    return (<View style={this.style.week} key={id}>{week}</View>);
+    return (<View style={[this.style.week, this.props.weekLine ]} key={id}>{week}</View>);
   }
 
   render() {
