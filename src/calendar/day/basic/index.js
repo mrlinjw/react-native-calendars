@@ -70,6 +70,7 @@ class Day extends Component {
     } else if (this.props.state === 'disabled' || marked.disabled) {
       textStyle.push(this.style.disabledText);
       priceStyle.push(this.style.disabledText);
+      remarkStyle.push(this.style.disabledText);
     } else if (this.props.state === 'today') {
       textStyle.push(this.style.todayText);
     }
