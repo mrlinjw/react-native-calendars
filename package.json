@@ -31,5 +31,5 @@
     "lint": "eslint src/ example/src",
     "test": "jasmine src/*.spec.js && npm run lint"
   },
-  "version": "1.0.0"
+  "version": "1.1.0"
 }
